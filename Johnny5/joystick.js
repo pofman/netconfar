@@ -21,9 +21,9 @@ board.on("ready", function() {
     });
 
     joystick.on("change", function() {
-        if (this.x > 0.9 || this.y < -0.9 || this.x < 0.2 || this.y > -0.2) {
+        if (this.x > 0.9 || this.y > 0.9 || this.x < 0.2 || this.y < 0.2) {
             if (player_id !== null) {
-                let direction = this.x > 0.9 ? 1 : this.y < -0.9 ? -1 : 0;
+                let direction = this.x > 0.9 ? 1 : this.y > 0.9 ? -1 : 0;
 
                 if (last_direction !== direction) {
                     console.log(`data sent: ${direction}`);
